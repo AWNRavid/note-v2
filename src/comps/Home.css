@@ -1,0 +1,90 @@
+#title {
+    background-color: #E9EFC0;
+    height: 100vh;
+}
+
+#title .nav-brand {
+    font-size: 2rem;
+}
+
+#title .nav {
+    font-size: 1.25rem;
+}
+
+#title .nav .nav-link {
+    border-bottom: transparent solid 2px;
+    transition: border-bottom 0.2s;
+}
+
+#title .nav .nav-link:hover {
+    /* color: black; */
+    border-bottom: #83BD75 solid 2px;
+}
+
+#title .introduction {
+    padding-top: 60px;
+    color: black;
+}
+
+#title .introduction .introduction-second-row {
+    margin-top: 200px;
+}
+
+#title .introduction h1 {
+    font-size: 4rem;
+}
+
+#title .introduction h2 {
+    font-size: 2rem;
+}
+
+#features {
+    /* background-color: indigo; */
+    height: 600px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+#features h1 {
+    padding-bottom: 30px;
+}
+
+#features .feature-desc {
+    font-size: 1.35rem;
+    text-align: left;
+    padding-bottom: 50px;
+}
+
+#features .feature-desc-2 {
+    font-size: 1.35rem;
+    text-align: right;
+    padding-bottom: 50px;
+}
+
+#testimonials {
+    color: black;
+    background-color: #E9EFC0;
+    /* height: 100vh; */
+    padding-top: 50px;
+    height: 500px;
+}
+
+#testimonials .testimonials-row {
+    padding-top: 80px;
+}
+
+#testimonials .review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+#footer {
+    background-color: black;
+    color: white;
+    height: 80px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    height: fit-content;
+}

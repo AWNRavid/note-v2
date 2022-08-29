@@ -1,0 +1,23 @@
+.note {
+	background-color: #fef68a;
+	border-radius: 10px;
+	padding: 1rem;
+	/* min-height: 170px; */
+	/* max-height: 262px; */
+	height: 262px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	white-space: pre-wrap;
+}
+
+.note-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.delete-icon,
+.edit-icon {
+	cursor: pointer;
+}

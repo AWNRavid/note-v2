@@ -1,6 +1,9 @@
 import React from 'react';
-import { Button, Form, Row, Col } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import './Register.css';
+
+const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
+const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 function Register({ handleRegister, username, setUsername, email, setEmail, password, setPassword }) {
   return (
