@@ -14,6 +14,7 @@ import NoteList from './comps/NoteList';
 
 import axios from './api/api';
 import { useEffect, useState } from 'react';
+import Register3 from './comps/Register3';
 
 function App() {
   // const navigate = useNavigate();
@@ -41,7 +42,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login handleUsername={handleUsername}/>} />
         {/* <Route path="/register" element={<Register username={username} setUsername={setUsername} email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleRegister={handleRegister} />} /> */}
-        <Route path='/register' element={<Register2 />} />
+        <Route path='/register' element={<Register3 />} />
         {/* <Route path="/get-note" element={<GetNote handleGetNote={handleGetNote} notes={notes} />} /> */}
         <Route path="/about" element={<About />} />
         <Route path='/note' element={<NoteList username={username}/>} />

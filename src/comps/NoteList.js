@@ -1,6 +1,5 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/api';
 import Note from './Note';
@@ -13,7 +12,11 @@ function NoteList({ username }) {
 
   const [show, setShow] = useState(true);
 
+  const [colors, setColors] = useState(['#9ADCFF', '#FFF89A', '#FFB2A6', '#FF8AAE']);
+
   const navigate = useNavigate();
+
+  const [member, setMember] = useState();
 
   const handleGetNote = async () => {
     try {
@@ -23,31 +26,56 @@ function NoteList({ username }) {
           Authorization: `token ${token}`,
         },
       });
+      // console.log(response);
       setNotes(response.data.reverse());
     } catch (error) {
       console.log(error);
     }
   };
 
+  const GetMember = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const response = await api.get('/get-member/:userId', {
+        headers: {
+          Authorization: `token ${token}`,
+        },
+      });
+      console.log(response);
+      setMember(response.data[0].username)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     handleGetNote();
+    GetMember()
   }, [notes]);
+
+  /* useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token && token !== 'undefined') {
+      navigate('/note')
+    }
+  }, []) */
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     navigate('/login');
   };
 
-  const handleAddNote = async (text) => {
+  const handleAddNote = async (text, color) => {
     try {
       const token = localStorage.getItem('token');
       // const date = new Date();
-      const todayDate = new Date().toISOString().slice(0, 10);
+      const todayDate = new Date().toISOString().slice(0, 10).replace('T', ' ');
       console.log(todayDate);
+      console.log(text, color);
 
       const response = await api.post(
         '/add-note/:userId',
-        { content: text, date: todayDate },
+        { content: text, date: todayDate, color },
         {
           headers: {
             Authorization: `token ${token}`,
@@ -71,13 +99,13 @@ function NoteList({ username }) {
 
   const handleUpdateNote = async (newNote) => {
     console.log(newNote);
-    const { id, content } = newNote;
+    const { id, content, color } = newNote;
     console.log(id, content);
     try {
       const token = localStorage.getItem('token');
       const response = await api.put(
         `/update-note/${id}`,
-        { id, content },
+        { id, content, color },
         {
           headers: {
             Authorization: `token ${token}`,
@@ -91,12 +119,14 @@ function NoteList({ username }) {
     }
   };
 
+  console.log(notes);
+
   return (
     <>
       <Container style={{ height: '100vh' }}>
         {show && (
           <Alert variant="primary" className="mt-3" dismissible onClose={() => setShow(false)}>
-            Welcome To Your Note {username}
+            Welcome To Your Note {member}
           </Alert>
         )}
 
@@ -107,9 +137,9 @@ function NoteList({ username }) {
         </button>
 
         <div className="notes-list mt-3">
-          <AddNote handleAddNote={handleAddNote} />
+          <AddNote handleAddNote={handleAddNote} colors={colors} setColors={setColors} />
           {notes.map((note) => {
-            return <Note key={note.id} id={note.id} title={note.title} content={note.content} date={note.date} handleDeleteNote={handleDeleteNote} handleUpdateNote={handleUpdateNote} />;
+            return <Note key={note.id} id={note.id} title={note.title} content={note.content} date={note.date} handleDeleteNote={handleDeleteNote} handleUpdateNote={handleUpdateNote} color={note.color} colorsOption={colors} />;
           })}
         </div>
       </Container>

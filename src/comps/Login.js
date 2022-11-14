@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import NavbarComp from './Navbar';
-import { Container, Navbar, Nav, Row, Col, Button, Form } from 'react-bootstrap';
 import api from '../api/api';
 import { Link, useNavigate  } from 'react-router-dom';
-import './Login.css';
+// import './Login.css';
+import style from './Login.module.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -27,11 +27,19 @@ function Login({handleUsername}) {
 
   const [password, setPassword] = useState('');
   const [validPassword, setValidPassword] = useState(false);
+  
+  const [email, setEmail] = useState('');
+  const [validEmail, setValidEmail] = useState(false);
 
   useEffect(() => {
     const result = INPUT_REGEX.test(username);
     setValidUsername(result);
   }, [username]);
+  
+  useEffect(() => {
+    const result = INPUT_REGEX.test(email);
+    setValidEmail(result);
+  }, [email]);
 
   useEffect(() => {
     const result = INPUT_REGEX.test(password);
@@ -41,7 +49,7 @@ function Login({handleUsername}) {
   const handleLogin = async (e) => {
     e.preventDefault();
     await api
-      .post('/login/', { username, password })
+      .post('/login/', { email, password })
       .then((result) => {
         console.log(result);
         console.log(result.status);
@@ -64,9 +72,9 @@ function Login({handleUsername}) {
   // const notify = () => toast("Wow so easy!");
 
   return (
-    <div>
+    <div className={style.login}>
       <NavbarComp />
-      <Container>
+      {/* <Container>
         <section id="regis-form">
           <Form onSubmit={handleLogin}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -88,12 +96,26 @@ function Login({handleUsername}) {
             Havent registered?
             <br />
             <span className="line">
-              {/*put router link here*/}
               <Link to="/register">Register Here</Link>
             </span>
           </p>
         </section>
-      </Container>
+      </Container> */}
+      <form onSubmit={handleLogin}>
+        <h1>Login</h1>
+        <label>
+          <span>Email: </span>
+          <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+        </label>
+        <label>
+          <span>Password: </span>
+          <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+        </label>
+        <button className='btnn'>Login</button>
+
+        <Link to="/register" className={style["register-link"]}>Click here to sign up</Link>
+      </form>
+
 
       <ToastContainer position="top-center" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover={false} />
     </div>

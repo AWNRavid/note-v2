@@ -1,5 +1,5 @@
-.note {
-  background-color: #fef68a;
+.newnote {
+  background-color: #67d7cc;
   border-radius: 10px;
   padding: 1rem;
   min-height: 170px;
@@ -9,7 +9,7 @@
   white-space: pre-wrap;
 }
 
-.note.new {
+.note .new {
   background-color: #67d7cc;
 }
 
@@ -19,13 +19,13 @@
   justify-content: space-between;
 }
 
-textarea {
+.newnote textarea {
   border: none;
   resize: none;
   background-color: #67d7cc;
 }
 
-textarea:focus {
+.newnote textarea:focus {
   outline: none;
 }
 
@@ -39,4 +39,17 @@ textarea:focus {
 .save:hover {
 	background-color: #ededed;
 	cursor: pointer;
+}
+
+.colors {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border 0.2s;
+}
+
+.colors:hover {
+  border: 1px solid rgb(125, 125, 125);
 }

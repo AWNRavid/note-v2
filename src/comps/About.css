@@ -1,0 +1,11 @@
+.About p {
+  margin: 50px auto;
+}
+
+.About {
+  margin: 50px auto;
+  width: 75%;
+  border: 3px solid darkseagreen;
+  padding: 10px 30px;
+  border-radius: 10px;
+}

@@ -1,0 +1,84 @@
+/* #regis-form {
+    background-color: #E9EFC0;
+    padding: 10px;
+    margin: 100px auto;
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 700px;
+}
+
+#regis-form button {
+    padding: 0.5rem;
+} */
+
+.login span {
+  display: block;
+  /* margin-bottom: 6px; */
+}
+
+.login h1 {
+  width: 150px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.login form {
+  width: 400px;
+  margin: 50px auto;
+  border: 5px solid darkseagreen;
+  border-radius: 10px;
+  padding: 50px;
+  /* height: 550px; */
+}
+
+.login label {
+  display: block;
+  margin: 65px 0;
+}
+
+.login input {
+  /* padding: 8px 6px; */
+  padding-top: 8px;
+  padding-bottom: 5px;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 1em;
+  color: #777;
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.login input:focus {
+  outline: none;
+}
+
+.register-link  {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: darkseagreen;
+  transition: 0.2s;
+}
+
+.register-link:hover{
+  color: rgb(87, 113, 87);
+}
+
+/* button {
+  background: none;
+  border: 2px solid #1f9751;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #1f9751;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  background: #1f9751;
+  color: #fff;
+} */

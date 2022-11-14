@@ -1,23 +1,49 @@
 .note {
-	background-color: #fef68a;
-	border-radius: 10px;
-	padding: 1rem;
-	/* min-height: 170px; */
-	/* max-height: 262px; */
-	height: 262px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	white-space: pre-wrap;
+  background-color: #FFF89A;
+  border-radius: 10px;
+  padding: 1rem;
+  /* min-height: 170px; */
+  /* max-height: 262px; */
+  height: 262px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: pre-wrap;
 }
 
 .note-footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .delete-icon,
 .edit-icon {
-	cursor: pointer;
+  cursor: pointer;
+}
+
+.edit {
+  width: 100%;
+  background-color: #67d7cc;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: pre-wrap;
+  resize: none;
+}
+
+.colors {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border 0.2s;
+}
+
+.colors:hover {
+  border: 1px solid rgb(125, 125, 125);
 }

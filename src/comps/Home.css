@@ -1,5 +1,6 @@
 #title {
-    background-color: #E9EFC0;
+    /* background-color: #E9EFC0; */
+    background-image: linear-gradient(to right, #e0ee86 , #E9EFC0);
     height: 100vh;
 }
 
@@ -43,6 +44,8 @@
     height: 600px;
     padding-top: 50px;
     padding-bottom: 100px;
+    background-color: rgb(255, 255, 255);
+    height: 800px;
 }
 
 #features h1 {
@@ -63,7 +66,8 @@
 
 #testimonials {
     color: black;
-    background-color: #E9EFC0;
+    /* background-color: #E9EFC0; */
+    background-image: linear-gradient(to right, #E9EFC0 , #e3ee9b);
     /* height: 100vh; */
     padding-top: 50px;
     height: 500px;
