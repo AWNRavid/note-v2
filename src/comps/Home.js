@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
-import NavbarComp from './Navbar';
-import { Container, Navbar, Nav, Row, Col, Card, Button, Carousel } from 'react-bootstrap';
+// import NavbarComp from './Navbar';
+import { Container, Navbar, Nav, Row, Col, Card, Button/* , Carousel */ } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import 'font-awesome/css/font-awesome.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import free_icon from '../images/free-icon.png';
 import easy_to_use from '../images/easy-to-use.png';
 import use_anywhere from '../images/responsive.png';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import mark_z from '../images/2821040788.jpg';
+// import mark_z from '../images/2821040788.jpg';
 
 function Home() {
   useEffect(() => {

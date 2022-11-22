@@ -22,7 +22,7 @@ const toastSetting = {
 function Login({handleUsername}) {
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState('');
+  const [username] = useState('');
   const [validUsername, setValidUsername] = useState(false);
 
   const [password, setPassword] = useState('');
@@ -55,6 +55,9 @@ function Login({handleUsername}) {
         console.log(result.status);
         console.log(result.statusText);
         console.log(result.data.result.username);
+        console.log(validUsername);
+        console.log(validPassword);
+        console.log(validEmail);
         handleUsername(result.data.result.username)
         // toast.success('Login success', toastSetting);
         localStorage.setItem('token', result.data.accessToken);

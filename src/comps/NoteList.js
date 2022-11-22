@@ -1,10 +1,10 @@
 import React from 'react';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/api';
 import Note from './Note';
 import './NoteList.css';
-import { Container, Navbar, Nav, Row, Col, Card, Button, Alert, CloseButton } from 'react-bootstrap';
+import { Container, Alert } from 'react-bootstrap';
 import AddNote from './AddNote';
 
 function NoteList({ username }) {
@@ -73,7 +73,7 @@ function NoteList({ username }) {
       console.log(todayDate);
       console.log(text, color);
 
-      const response = await api.post(
+      await api.post(
         '/add-note/:userId',
         { content: text, date: todayDate, color },
         {

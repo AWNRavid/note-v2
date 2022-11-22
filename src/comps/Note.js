@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Note.css';
 import { MdDeleteForever } from 'react-icons/md';
 import { BsFillPencilFill } from 'react-icons/bs';
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 
 function Note({ id, content, date, handleDeleteNote, handleUpdateNote, color, colorsOption }) {
   const [show, setShow] = useState(false);
