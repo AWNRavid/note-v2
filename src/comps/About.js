@@ -1,6 +1,5 @@
 import React from 'react';
 import NavbarComp from './Navbar';
-import { Container, Navbar, Nav, Row, Col } from 'react-bootstrap';
 import './About.css';
 
 function About() {
